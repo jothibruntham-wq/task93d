@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "DM Sans", sans-serif;
+}
+
+.fashion-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(255, 255, 255, 0.9),
+      rgba(244, 239, 235, 0.65) 48%,
+      rgba(235, 228, 224, 0.9)
+    );
+
+  color: #24201f;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background texture */
+
+.fashion-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(#b7ada8 0.7px, transparent 0.7px);
+
+  background-size: 27px 27px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* HEADER */
+
+.top-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4.5vw;
+  z-index: 50;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #77706c;
+}
+
+.menu-dot {
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+/* CAROUSEL */
+
+.carousel-section {
+  width: 100%;
+  height: 78vh;
+
+  position: absolute;
+  top: 10vh;
+  left: 0;
+
+  perspective: 1300px;
+}
+
+.carousel {
+  position: absolute;
+
+  left: 50%;
+  top: 51%;
+
+  width: 500px;
+  height: 560px;
+
+  transform: translate(-50%, -50%);
+
+  transform-style: preserve-3d;
+}
+
+/* MODEL */
+
+.model-card {
+  position: absolute;
+
+  width: 330px;
+  height: 530px;
+
+  left: 50%;
+  top: 50%;
+
+  margin-left: -165px;
+  margin-top: -265px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  transform-style: preserve-3d;
+
+  cursor: pointer;
+
+  will-change: transform, opacity;
+}
+
+.model-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  filter: drop-shadow(
+    0px 22px 18px rgba(66, 53, 47, 0.15)
+  );
+}
+
+/* ACTIVE MODEL */
+
+.active-model {
+  filter: drop-shadow(
+    0 25px 25px rgba(50, 40, 35, 0.12)
+  );
+}
+
+/* SIDE MODELS */
+
+.left-model {
+  transform-origin: right center;
+}
+
+.right-model {
+  transform-origin: left center;
+}
+
+/* INFO CARD */
+
+.info-card {
+  position: absolute;
+
+  right: 8%;
+  top: 48%;
+
+  transform: translateY(-50%);
+
+  width: 205px;
+  min-height: 190px;
+
+  padding: 28px 25px;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(67, 65, 65, 0.96),
+      rgba(48, 47, 47, 0.98)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 22px 45px rgba(40, 30, 27, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  z-index: 30;
+}
+
+.small-number {
+  display: block;
+
+  font-size: 7px;
+  letter-spacing: 2.5px;
+
+  color: #bdb8b5;
+
+  margin-bottom: 17px;
+}
+
+.info-card h1 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 24px;
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  margin-bottom: 13px;
+}
+
+.info-card p {
+  color: #bdb9b7;
+
+  font-size: 8px;
+  line-height: 1.7;
+
+  max-width: 150px;
+}
+
+.info-card button {
+  margin-top: 20px;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  font-size: 7px;
+  letter-spacing: 1.8px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-card button span {
+  font-size: 13px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-navigation {
+  position: absolute;
+
+  bottom: 45px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  z-index: 50;
+}
+
+.slide-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.slide-buttons button {
+  border: 1px solid rgba(88, 78, 73, 0.18);
+
+  background: rgba(255, 255, 255, 0.42);
+
+  backdrop-filter: blur(8px);
+
+  border-radius: 30px;
+
+  padding: 8px 14px;
+
+  font-size: 7px;
+  letter-spacing: 0.3px;
+
+  color: #6c6561;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.slide-buttons button:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.slide-buttons button.selected {
+  background: #ffffff;
+
+  color: #272220;
+
+  box-shadow:
+    0 5px 16px rgba(60, 45, 38, 0.08);
+}
+
+.arrow-btn {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(80, 70, 65, 0.18);
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  color: #59514d;
+
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  background: white;
+
+  transform: scale(1.1);
+}
+
+/* COUNTER */
+
+.counter {
+  position: absolute;
+
+  bottom: 48px;
+  right: 4.5%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+
+  color: #7c7470;
+
+  z-index: 20;
+}
+
+.counter-line {
+  width: 35px;
+  height: 1px;
+
+  background: #aaa29e;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .info-card {
+    right: 3%;
+    width: 180px;
+  }
+
+  .carousel {
+    transform: translate(-55%, -50%);
+  }
+
+  .bottom-navigation {
+    bottom: 35px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .fashion-page {
+    min-height: 600px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .carousel-section {
+    top: 9vh;
+  }
+
+  .carousel {
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+
+  .info-card {
+    top: 65%;
+    right: 50%;
+
+    transform: translate(50%, -50%);
+
+    width: 170px;
+    min-height: 150px;
+
+    padding: 20px;
+  }
+
+  .info-card h1 {
+    font-size: 20px;
+  }
+
+  .bottom-navigation {
+    width: 95%;
+    justify-content: center;
+    bottom: 18px;
+  }
+
+  .slide-buttons {
+    max-width: 75vw;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .slide-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .counter {
+    display: none;
+  }
+}
